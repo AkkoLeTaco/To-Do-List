@@ -7,7 +7,7 @@ const Home = () => {
 	const [item, setItem] = useState("");
 	const [list, setList] = useState([]);
 	const sent = (del) => {
-		const dele = list.filter((lists) => lists !== del);
+		const dele = list.filter((lists, index) => index !== del);
 		setList(dele);
 	};
 	return (
@@ -41,7 +41,7 @@ const Home = () => {
 							<button
 								className="btn btn-danger"
 								onClick={() => {
-									sent(lists);
+									sent(index);
 								}}>
 								X
 							</button>
